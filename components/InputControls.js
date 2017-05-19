@@ -4,8 +4,10 @@ function InputControls(data){
     /*
      * RENDER
      */
-    $outerDiv = Div(
-      $input = Input()
+    $outerDiv = (
+      Div(
+        $input = Input()
+      )
     )
 
     /*

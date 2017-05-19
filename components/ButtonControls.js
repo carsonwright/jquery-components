@@ -4,32 +4,38 @@ function ButtonControls(data){
      * SETUP
      */
     aNumber = 0
-
+    var React = Component();
     /*
      * RENDER
      */
-    outerDiv = Div(
-      [
-        helloButton = Button("hello"), 
-        "&nbsp;",
-        "Click on Hello to See alert!",
-        moreText = Div(aNumber)
-      ]
-    )
+    outerDiv = React.createElement(
+      "div",
+      { ref: "test" },
+      "Testing",
+      React.createElement(
+        "i",
+        {ref: "moreText"},
+        " "
+      )
+    );
+
     outerDiv.css({color: "#ff0000"})
 
     /*
      * HANDLERS
      */
-    helloButton.click(function(){
+    React.refs.test.on("click", function(){
       alert("Hello " + data.value);
     })
     outerDiv.on("UP_NUMBER", function(){
-      moreText.html(aNumber += 1)
+      console.log(React.refs.moreText)
+      React.refs.moreText.html(aNumber += 1)
     })
     outerDiv.on("DOWN_NUMBER", function(){
-      moreText.html(aNumber -= 1)
+      React.refs.moreText.html(aNumber -= 1)
     })
+
+    console.log(React.refs)
 
     return outerDiv;
 }
