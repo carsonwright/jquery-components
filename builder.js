@@ -31,12 +31,20 @@ function Builder() {
     },
     br: function(){
       return this.element("br", arguments)
+    },
+    fa: function(arg){
+      var i = this.element("i", []);
+      i.addClass("fa fa-" + arg);
+      return i;
     }
   }
 
   var $component = bd.div();
   Object.keys(bd).forEach(function(key){
     $component[key] = bd[key]
+  })
+  Object.keys(Components).forEach(function(key){
+    $component[key] = Components[key]
   })
   $component.$state = $({});
   

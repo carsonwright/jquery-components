@@ -32,7 +32,8 @@ Component("Greeter", function(data){
                 "Type Your Name",
                 input(inputHandler),
                 br(),
-                div("Hello"), " ", div(displayName)
+                div("Hello"), " ", div(displayName),
+                fa("icon")
             )
         )
     }
